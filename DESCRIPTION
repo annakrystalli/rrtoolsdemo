@@ -5,8 +5,10 @@ Authors@R: person("Anna", "Krystalli", email = "first.last@example.com", role = 
 Description: A demo setup of an rrtools Reproducible Research Compendium prepared 
   for the Apr 2018 Sheffield R Users group meetup.
 Depends: R (>= 3.4.3)
-License: What license is it under?
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Suggests:
+    testthat
 URL: https://github.com/annakrystalli/rrtoolsdemo
 BugReports: https://github.com/annakrystalli/rrtoolsdemo/issues
