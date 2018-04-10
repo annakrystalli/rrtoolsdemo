@@ -9,6 +9,16 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Suggests:
-    testthat
+    testthat,
+    gapminder,
+    knitr,
+    rmarkdown
 URL: https://github.com/annakrystalli/rrtoolsdemo
 BugReports: https://github.com/annakrystalli/rrtoolsdemo/issues
+Imports: 
+    bookdown,
+    viridis,
+    dplyr,
+    ggplot2
+VignetteBuilder: knitr
+RoxygenNote: 6.0.1
