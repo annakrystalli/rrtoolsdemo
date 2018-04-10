@@ -2,7 +2,7 @@
 FROM rocker/verse:3.4.3
 
 # required
-MAINTAINER Your Name <your_email@somewhere.com>
+MAINTAINER Anna Krystalli <a.krystalli@sheffield.ac.uk>
 
 COPY . /rrtoolsdemo
 
