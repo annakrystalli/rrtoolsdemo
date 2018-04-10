@@ -1,0 +1,111 @@
+---
+title: "Title Goes Here"
+author:
+  - Anna Krystalli
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+    bookdown::html_document2:
+      fig_caption: yes
+      reference_docx: "../templates/template.docx" # Insert path for the DOCX file
+bibliography: references.bib
+csl: "../templates/journal-of-archaeological-science.csl" # Insert path for the bib-style
+abstract: |
+  Text of abstract
+keywords: |
+  keyword 1; keyword 2; keyword 3
+highlights: |
+  These are the highlights. 
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+<!-- This is the format for text comments that will be ignored during renderings. Do not put R code in these comments because it will not be ignored. -->
+
+```{r, setup, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  echo = FALSE,
+  comment = "#>",
+  fig.path = "../figures/"
+)
+
+library(rrtoolsdemo)
+library(gapminder)
+```
+
+# Introduction
+
+Here is a demo of an analysis in a Rmd document.
+
+# Background
+
+Demoing rrtools functionality by making a quick mock analysis
+
+# Methods
+
+Use Gapminder data from package `gapminder` to get yearly means of life expectancy and per capita GDP. 
+
+First get data:
+
+```{r get-data}
+df <- gapminder::gapminder
+```
+
+Then summarise data
+```{r}
+df <- summarise_by_year(df)
+```
+
+
+
+# Results
+
+Finally plot data
+
+```{r}
+plot_gdp_v_lifeexp(df)
+```
+
+Try another palette
+
+```{r}
+plot_gdp_v_lifeexp(df, palette = "magma")
+```
+
+
+# Discussion
+
+# Conclusion
+
+# Acknowledgements
+
+<!-- The following line inserts a page break when the output is MS Word. For page breaks in PDF, use \newpage on its own line.  -->
+##### pagebreak
+
+# References 
+<!-- The following line ensures the references appear here for the MS Word or HTML output files, rather than right at the end of the document (this will not work for PDF files):  -->
+<div id="refs"></div>
+
+##### pagebreak
+
+### Colophon
+
+This report was generated on `r Sys.time()` using the following computational environment and dependencies: 
+
+```{r colophon, cache = FALSE}
+# which R packages and versions?
+devtools::session_info()
+```
+
+The current Git commit details are:
+
+```{r}
+# what commit is this file at? You may need to change the path value
+# if your Rmd is not in analysis/paper/
+git2r::repository("../..")
+```
