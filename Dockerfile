@@ -2,7 +2,7 @@
 FROM rocker/verse:3.4.3
 
 # required
-MAINTAINER Anna Krystalli <a.krystalli@sheffield.ac.uk>
+MAINTAINER Anna Krystalli <annakrystalli@googlemail.com>
 
 COPY . /rrtoolsdemo
 
